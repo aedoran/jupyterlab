@@ -142,7 +142,7 @@ export namespace PageConfig {
    * @param options - IGetUrlOptions for the new path.
    */
   export function getUrl(options: IGetUrlOptions): string {
-    let path = getOption('baserl') || '/';
+    let path = getOption('baseUrl') || '/';
     const mode = options.mode ?? getOption('mode');
     const workspace = options.workspace ?? getOption('workspace');
     const labOrDoc = mode === 'multiple-document' ? 'lab' : 'doc';
