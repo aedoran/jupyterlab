@@ -142,10 +142,15 @@ export namespace PageConfig {
    * @param options - IGetUrlOptions for the new path.
    */
   export function getUrl(options: IGetUrlOptions): string {
-    let path = getOption('baseUrl') || '/';
+    let path = getOption('baserl') || '/';
     const mode = options.mode ?? getOption('mode');
     const workspace = options.workspace ?? getOption('workspace');
     const labOrDoc = mode === 'multiple-document' ? 'lab' : 'doc';
+
+    if (options.baseUrl) { 
+	path = URLExt.join(options.baseUrl); 
+    }
+
     path = URLExt.join(path, labOrDoc);
     if (workspace !== defaultWorkspace) {
       path = URLExt.join(
@@ -187,6 +192,9 @@ export namespace PageConfig {
      * contain a tree portion.
      */
     treePath?: string;
+
+
+    baseUrl?: string;
   }
 
   /**

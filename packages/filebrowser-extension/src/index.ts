@@ -449,7 +449,8 @@ function activateShareFile(
           PageConfig.getUrl({
             mode: 'single-document',
             workspace: PageConfig.defaultWorkspace,
-            treePath: model.path
+            treePath: model.path,
+	      baseUrl: PageConfig.getShareUrl(),
           })
         )
       );
