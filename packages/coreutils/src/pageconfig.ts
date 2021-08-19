@@ -142,6 +142,7 @@ export namespace PageConfig {
    * @param options - IGetUrlOptions for the new path.
    */
   export function getUrl(options: IGetUrlOptions): string {
+    console.log("wassup");
     let path = getOption('baseUrl') || '/';
     const mode = options.mode ?? getOption('mode');
     const workspace = options.workspace ?? getOption('workspace');
